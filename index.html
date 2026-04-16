@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>AI Intelligence Hub 2026 — Complete AI Dashboard</title>
+  <meta name="description" content="Comprehensive AI dashboard covering tools, job replacement predictions, affected industries, countries, companies and how to thrive in the AI era."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ====== MOBILE NAV OVERLAY ====== -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+<!-- ====== SIDEBAR ====== -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <svg class="brand-icon" viewBox="0 0 36 36" fill="none" aria-label="AI Hub">
+      <circle cx="18" cy="18" r="16" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+      <circle cx="18" cy="18" r="8" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+      <circle cx="18" cy="18" r="3" fill="#00d4ff"/>
+      <line x1="18" y1="2" x2="18" y2="10" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="18" y1="26" x2="18" y2="34" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="2" y1="18" x2="10" y2="18" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="26" y1="18" x2="34" y2="18" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="brand-name">AI Intelligence Hub</div>
+      <div class="brand-ver">v2.0 · April 2026</div>
+    </div>
+    <button class="sidebar-close" onclick="closeMobileNav()">✕</button>
+  </div>
+
+  <div class="live-badge">
+    <span class="live-pulse"></span>
+    <span>Live Research Data</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Overview</div>
+    <a href="#overview" class="nav-item active" data-section="overview">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 10a8 8 0 1116 0A8 8 0 012 10zm8-4a1 1 0 100 2 1 1 0 000-2zm0 4a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1z"/></svg>
+      Dashboard Overview
+    </a>
+    <a href="#tools" class="nav-item" data-section="tools">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.396 0 2.7.37 3.82 1.016A7.994 7.994 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.969 7.969 0 0114.5 4c-1.396 0-2.7.37-3.82 1.016A7.994 7.994 0 009 4.804z"/></svg>
+      Top AI Tools
+    </a>
+    <a href="#daily" class="nav-item" data-section="daily">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+      AI in Daily Life
+    </a>
+
+    <div class="nav-section-label">Job Impact</div>
+    <a href="#replaced" class="nav-item" data-section="replaced">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+      Jobs Being Replaced
+    </a>
+    <a href="#sectors" class="nav-item" data-section="sectors">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
+      Sectors Affected
+    </a>
+    <a href="#companies" class="nav-item" data-section="companies">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/></svg>
+      Companies Replacing
+    </a>
+    <a href="#countries" class="nav-item" data-section="countries">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/></svg>
+      Countries Leading
+    </a>
+
+    <div class="nav-section-label">Future & Skills</div>
+    <a href="#predictions" class="nav-item" data-section="predictions">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+      Predictions 2026–2030
+    </a>
+    <a href="#skills" class="nav-item" data-section="skills">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+      Survive & Thrive
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="sf-stat">
+      <span>Sources</span>
+      <b>WEF · Goldman Sachs · McKinsey</b>
+    </div>
+    <div class="sf-stat">
+      <span>Updated</span>
+      <b>April 16, 2026</b>
+    </div>
+  </div>
+</aside>
+
+<!-- ====== MAIN CONTENT ====== -->
+<div class="main-wrap">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="topbar-title">AI Intelligence Hub 2026</div>
+    <div class="topbar-right">
+      <div class="tb-badge">
+        <span class="live-pulse sm"></span>
+        Live
+      </div>
+      <div class="tb-date">Apr 16, 2026</div>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <!-- ====== SECTION: OVERVIEW ====== -->
+    <section id="overview" class="section">
+      <div class="section-header">
+        <div class="sh-label">Dashboard Overview</div>
+        <h1 class="sh-title">The AI Disruption Index <span class="sh-year">2026</span></h1>
+        <p class="sh-sub">Everything you need to know about AI — tools, job impact, affected sectors, countries, predictions, and how to build your future-proof career.</p>
+      </div>
+
+      <!-- KPI STRIP -->
+      <div class="kpi-grid">
+        <div class="kpi-card accent-blue">
+          <div class="kpi-icon">🤖</div>
+          <div class="kpi-val" data-count="769" data-suffix="M">0</div>
+          <div class="kpi-label">ChatGPT Monthly Users</div>
+          <div class="kpi-delta up">+4% QoQ</div>
+        </div>
+        <div class="kpi-card accent-red">
+          <div class="kpi-icon">💼</div>
+          <div class="kpi-val" data-count="92" data-suffix="M">0</div>
+          <div class="kpi-label">Jobs Displaced by 2030</div>
+          <div class="kpi-delta warn">WEF Forecast</div>
+        </div>
+        <div class="kpi-card accent-green">
+          <div class="kpi-icon">🌱</div>
+          <div class="kpi-val" data-count="170" data-suffix="M">0</div>
+          <div class="kpi-label">New Jobs Created by 2030</div>
+          <div class="kpi-delta up">Net +78M</div>
+        </div>
+        <div class="kpi-card accent-purple">
+          <div class="kpi-icon">💰</div>
+          <div class="kpi-val" data-count="242" data-suffix="B">0</div>
+          <div class="kpi-label">AI VC Funding Q1 2026</div>
+          <div class="kpi-delta up">Record High</div>
+        </div>
+        <div class="kpi-card accent-orange">
+          <div class="kpi-icon">🏭</div>
+          <div class="kpi-val" data-count="86" data-suffix="%">0</div>
+          <div class="kpi-label">Employers Expect AI Impact</div>
+          <div class="kpi-delta warn">by 2030</div>
+        </div>
+        <div class="kpi-card accent-cyan">
+          <div class="kpi-icon">📈</div>
+          <div class="kpi-val" data-count="7" data-suffix="T">0</div>
+          <div class="kpi-label">GDP Boost from AI by 2030</div>
+          <div class="kpi-delta up">Goldman Sachs</div>
+        </div>
+      </div>
+
+      <!-- URGENCY ALERT -->
+      <div class="alert-banner">
+        <div class="ab-icon">⚡</div>
+        <div class="ab-content">
+          <strong>Right Now in 2026:</strong> 3 in 10 companies plan to replace employees with AI this year. 47.9% of tech layoffs are directly attributed to AI. The UAE leads globally with 64% of working adults using AI tools daily.
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION: TOP AI TOOLS ====== -->
+    <section id="tools" class="section">
+      <div class="section-header">
+        <div class="sh-label">Section 01</div>
+        <h2 class="sh-title">Top Legitimate AI Tools</h2>
+        <p class="sh-sub">The tools you can actually trust — ranked by market share, user count, and real-world accuracy.</p>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="card">
+          <div class="card-head"><h3>Market Share — April 2026</h3><span class="src">StatCounter</span></div>
+          <div class="chart-box"><canvas id="marketChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Benchmark Accuracy</h3><span class="src">LM Council</span></div>
+          <div class="chart-box"><canvas id="benchChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="tool-cards">
+        <div class="tool-card t1">
+          <div class="tc-badge">Leader</div>
+          <div class="tc-rank">#1</div>
+          <div class="tc-name">ChatGPT</div>
+          <div class="tc-maker">OpenAI · GPT-5.2/5.4</div>
+          <div class="tc-users">769M monthly users</div>
+          <div class="tc-bar"><div style="width:78.2%"></div></div>
+          <div class="tc-score">78.2% market share</div>
+          <div class="tc-use">Best for: Writing, coding, research, daily tasks, automation</div>
+          <div class="tc-free">Free tier + $20/mo Pro</div>
+        </div>
+        <div class="tool-card t2">
+          <div class="tc-badge">Rising</div>
+          <div class="tc-rank">#2</div>
+          <div class="tc-name">Google Gemini</div>
+          <div class="tc-maker">Google · Gemini 3</div>
+          <div class="tc-users">750M+ monthly users</div>
+          <div class="tc-bar"><div style="width:8.7%"></div></div>
+          <div class="tc-score">8.7% market share</div>
+          <div class="tc-use">Best for: Google Workspace, Search integration, Gmail/Docs</div>
+          <div class="tc-free">Free + $19.99/mo Advanced</div>
+        </div>
+        <div class="tool-card t3">
+          <div class="tc-badge">Search AI</div>
+          <div class="tc-rank">#3</div>
+          <div class="tc-name">Perplexity AI</div>
+          <div class="tc-maker">Perplexity · Search-focused</div>
+          <div class="tc-users">35.7M monthly users</div>
+          <div class="tc-bar"><div style="width:7.1%"></div></div>
+          <div class="tc-score">7.1% market share</div>
+          <div class="tc-use">Best for: Research, real-time answers, cited information</div>
+          <div class="tc-free">Free + $20/mo Pro</div>
+        </div>
+        <div class="tool-card t4">
+          <div class="tc-badge">Enterprise</div>
+          <div class="tc-rank">#4</div>
+          <div class="tc-name">Microsoft Copilot</div>
+          <div class="tc-maker">Microsoft · GPT-5.2</div>
+          <div class="tc-users">23.4M monthly users</div>
+          <div class="tc-bar"><div style="width:3.2%"></div></div>
+          <div class="tc-score">3.2% market share</div>
+          <div class="tc-use">Best for: Office 365, Word, Excel, PowerPoint, Teams</div>
+          <div class="tc-free">Free + M365 ($6/mo)</div>
+        </div>
+        <div class="tool-card t5">
+          <div class="tc-badge">Reasoning</div>
+          <div class="tc-rank">#5</div>
+          <div class="tc-name">Claude AI</div>
+          <div class="tc-maker">Anthropic · Opus 4.6</div>
+          <div class="tc-users">14.8M monthly users</div>
+          <div class="tc-bar"><div style="width:2.9%"></div></div>
+          <div class="tc-score">2.9% market share</div>
+          <div class="tc-use">Best for: Long documents, legal/medical analysis, coding</div>
+          <div class="tc-free">Free + $20/mo Pro</div>
+        </div>
+        <div class="tool-card t6">
+          <div class="tc-badge">Coding</div>
+          <div class="tc-rank">#6</div>
+          <div class="tc-name">Cursor (Anysphere)</div>
+          <div class="tc-maker">Anysphere · AI Code Editor</div>
+          <div class="tc-users">$1B ARR milestone</div>
+          <div class="tc-bar"><div style="width:50%"></div></div>
+          <div class="tc-score">$29.3B valuation</div>
+          <div class="tc-use">Best for: Software development, code completion, debugging</div>
+          <div class="tc-free">Free + $20/mo Pro</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION: AI IN DAILY LIFE ====== -->
+    <section id="daily" class="section">
+      <div class="section-header">
+        <div class="sh-label">Section 02</div>
+        <h2 class="sh-title">How to Use AI in Daily Life</h2>
+        <p class="sh-sub">Practical ways to use AI every single day — save hours, earn more, stress less.</p>
+      </div>
+
+      <div class="daily-grid">
+
+        <div class="daily-card dc-work">
+          <div class="dc-icon">💻</div>
+          <h4>Work & Career</h4>
+          <ul>
+            <li><strong>Write emails in seconds</strong> — paste your draft, ask AI to polish it</li>
+            <li><strong>Meeting summaries</strong> — use Otter.ai or Fireflies to auto-transcribe calls</li>
+            <li><strong>Resume & cover letters</strong> — AI tailors it to each job posting</li>
+            <li><strong>Research faster</strong> — Perplexity replaces hours of Googling</li>
+            <li><strong>Data analysis</strong> — upload a CSV to ChatGPT, get instant insights</li>
+            <li><strong>Presentation slides</strong> — Gamma.ai builds full decks from a prompt</li>
+          </ul>
+          <div class="dc-tools">ChatGPT · Otter.ai · Perplexity · Gamma.ai · Notion AI</div>
+        </div>
+
+        <div class="daily-card dc-finance">
+          <div class="dc-icon">💳</div>
+          <h4>Personal Finance</h4>
+          <ul>
+            <li><strong>Budget tracking</strong> — YNAB uses AI to categorize every spend</li>
+            <li><strong>Bill negotiation</strong> — Rocket Money auto-negotiates lower rates</li>
+            <li><strong>Investment advice</strong> — Betterment AI rebalances your portfolio</li>
+            <li><strong>Tax prep</strong> — TurboTax AI finds deductions automatically</li>
+            <li><strong>Explain documents</strong> — upload your bank/HR doc to Claude for plain English</li>
+            <li><strong>Spending audit</strong> — upload bank CSV to ChatGPT, identify waste</li>
+          </ul>
+          <div class="dc-tools">YNAB · Rocket Money · Betterment · TurboTax · Claude</div>
+        </div>
+
+        <div class="daily-card dc-health">
+          <div class="dc-icon">🏃</div>
+          <h4>Health & Fitness</h4>
+          <ul>
+            <li><strong>Custom workout plan</strong> — tell ChatGPT your goals, get a full plan</li>
+            <li><strong>Meal planning</strong> — AI generates weekly menus based on your diet</li>
+            <li><strong>Symptom checker</strong> — ask Claude or Gemini before visiting a doctor</li>
+            <li><strong>Mental health</strong> — apps like Wysa use AI for daily check-ins</li>
+            <li><strong>Sleep coaching</strong> — AI analyzes wearable data and gives tips</li>
+            <li><strong>Calorie counting</strong> — photo your meal, AI estimates macros</li>
+          </ul>
+          <div class="dc-tools">ChatGPT · Wysa · Gemini · Noom AI · MyFitnessPal AI</div>
+        </div>
+
+        <div class="daily-card dc-learn">
+          <div class="dc-icon">📚</div>
+          <h4>Learning & Education</h4>
+          <ul>
+            <li><strong>Learn anything faster</strong> — "Explain quantum physics like I'm 10"</li>
+            <li><strong>Language learning</strong> — AI tutor for Malay, Tamil, Mandarin, Arabic</li>
+            <li><strong>Summarize long docs</strong> — drop a 50-page PDF, get key points in 30 sec</li>
+            <li><strong>Study flashcards</strong> — AI generates Q&A from your notes automatically</li>
+            <li><strong>Coding bootcamp</strong> — Claude and Cursor teach you to code interactively</li>
+            <li><strong>Certifications</strong> — Google AI Essentials, IBM AI courses are free</li>
+          </ul>
+          <div class="dc-tools">Claude · Duolingo AI · Coursera AI · NotebookLM · Cursor</div>
+        </div>
+
+        <div class="daily-card dc-travel">
+          <div class="dc-icon">✈️</div>
+          <h4>Travel Planning (UAE ↔ Malaysia)</h4>
+          <ul>
+            <li><strong>Full itinerary in seconds</strong> — "Plan 5 days in KL on $500 budget"</li>
+            <li><strong>Flight price predictions</strong> — Hopper AI predicts best time to book</li>
+            <li><strong>Visa & document prep</strong> — AI explains entry requirements clearly</li>
+            <li><strong>Translation on-the-go</strong> — Google Translate AI is near-perfect now</li>
+            <li><strong>Local food recs</strong> — ChatGPT knows halal spots, hawker centers</li>
+            <li><strong>Packing list</strong> — AI generates based on destination, weather, duration</li>
+          </ul>
+          <div class="dc-tools">ChatGPT · Hopper · Google Translate AI · Perplexity</div>
+        </div>
+
+        <div class="daily-card dc-creative">
+          <div class="dc-icon">🎨</div>
+          <h4>Creative & Entertainment</h4>
+          <ul>
+            <li><strong>AI images</strong> — Midjourney / DALL-E creates stunning visuals from text</li>
+            <li><strong>Video editing</strong> — Runway AI auto-edits, removes backgrounds, adds effects</li>
+            <li><strong>Write scripts</strong> — AI writes Tamil, English, Malay content fluently</li>
+            <li><strong>Music creation</strong> — Suno AI generates full songs from text prompts</li>
+            <li><strong>Photo enhancement</strong> — Adobe Firefly enhances any photo in seconds</li>
+            <li><strong>Social captions</strong> — AI writes viral-ready Instagram/TikTok captions</li>
+          </ul>
+          <div class="dc-tools">Midjourney · Runway · Suno AI · Adobe Firefly · ElevenLabs</div>
+        </div>
+
+      </div>
+
+      <!-- Quick Start Prompt Box -->
+      <div class="prompt-box">
+        <div class="pb-header">
+          <span class="pb-icon">💡</span>
+          <h4>5 Prompts to Try Today (Copy & Paste into ChatGPT)</h4>
+        </div>
+        <div class="prompts-grid">
+          <div class="prompt-item">
+            <div class="pi-num">01</div>
+            <div class="pi-text">"Audit my week — I work in customer support, travel between UAE and Malaysia. Create a 7-day AI productivity plan for me."</div>
+          </div>
+          <div class="prompt-item">
+            <div class="pi-num">02</div>
+            <div class="pi-text">"I'm worried AI will replace my job in tech support. Give me a step-by-step 90-day plan to become AI-proof and in-demand."</div>
+          </div>
+          <div class="prompt-item">
+            <div class="pi-num">03</div>
+            <div class="pi-text">"Analyze this email [paste email] and reply professionally, keeping it short, clear and positive."</div>
+          </div>
+          <div class="prompt-item">
+            <div class="pi-num">04</div>
+            <div class="pi-text">"I have AED 2,000 to invest. Compare 3 options suitable for an expat in UAE — explain risk and returns in simple terms."</div>
+          </div>
+          <div class="prompt-item">
+            <div class="pi-num">05</div>
+            <div class="pi-text">"Plan a 5-day trip from Dubai to Kuala Lumpur for 2 people. Budget AED 3,000. Include flights, hotels and must-eat food spots."</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION: JOBS BEING REPLACED ====== -->
+    <section id="replaced" class="section">
+      <div class="section-header">
+        <div class="sh-label">Section 03</div>
+        <h2 class="sh-title">Jobs Being Replaced — Right Now</h2>
+        <p class="sh-sub">These roles are already being automated or severely reduced in 2026. Source: WEF, McKinsey, Oxford, LinkedIn, Axios.</p>
+      </div>
+
+      <div class="risk-legend">
+        <span class="rl-item critical">🔴 Critical (80–95%)</span>
+        <span class="rl-item high">🟠 High (60–79%)</span>
+        <span class="rl-item elevated">🟡 Elevated (40–59%)</span>
+        <span class="rl-item moderate">🟢 Moderate (&lt;40%)</span>
+      </div>
+
+      <div class="jobs-grid">
+        <!-- Critical -->
+        <div class="job-card critical">
+          <div class="jc-risk">80–95%</div>
+          <div class="jc-title">Data Entry Clerk</div>
+          <div class="jc-sector">Admin</div>
+          <div class="jc-why">Fully mechanical — AI thrives on structured input/output</div>
+          <div class="jc-timeline">Being replaced: NOW</div>
+        </div>
+        <div class="job-card critical">
+          <div class="jc-risk">75–90%</div>
+          <div class="jc-title">Telemarketer</div>
+          <div class="jc-sector">Sales</div>
+          <div class="jc-why">AI voice bots handle scripts better, 24/7 with no fatigue</div>
+          <div class="jc-timeline">Being replaced: NOW</div>
+        </div>
+        <div class="job-card critical">
+          <div class="jc-risk">70–85%</div>
+          <div class="jc-title">Bookkeeper / Payroll Clerk</div>
+          <div class="jc-sector">Finance</div>
+          <div class="jc-why">QuickBooks AI, Xero, Pilot automate billing & tax filing</div>
+          <div class="jc-timeline">Being replaced: NOW</div>
+        </div>
+        <div class="job-card critical">
+          <div class="jc-risk">65–82%</div>
+          <div class="jc-title">Call Center / Tier-1 Support</div>
+          <div class="jc-sector">CS / Telecom</div>
+          <div class="jc-why">AI chatbots resolve 80% of common queries without humans</div>
+          <div class="jc-timeline">Being replaced: NOW</div>
+        </div>
+        <div class="job-card critical">
+          <div class="jc-risk">65–80%</div>
+          <div class="jc-title">Basic Copywriter / SEO Writer</div>
+          <div class="jc-sector">Marketing</div>
+          <div class="jc-why">ChatGPT/Jasper produce SEO content faster and cheaper</div>
+          <div class="jc-timeline">Being replaced: NOW</div>
+        </div>
+        <div class="job-card critical">
+          <div class="jc-risk">60–75%</div>
+          <div class="jc-title">Retail Cashier</div>
+          <div class="jc-sector">Retail</div>
+          <div class="jc-why">Self-checkouts + autonomous stores (Amazon Go) replace cashiers</div>
+          <div class="jc-timeline">Being replaced: NOW</div>
+        </div>
+        <!-- High -->
+        <div class="job-card high">
+          <div class="jc-risk">55–70%</div>
+          <div class="jc-title">Travel Agent</div>
+          <div class="jc-sector">Tourism</div>
+          <div class="jc-why">AI travel planners and booking bots do the job in seconds</div>
+          <div class="jc-timeline">Shrinking: 2026</div>
+        </div>
+        <div class="job-card high">
+          <div class="jc-risk">55–70%</div>
+          <div class="jc-title">Medical Transcriptionist</div>
+          <div class="jc-sector">Healthcare</div>
+          <div class="jc-why">AI transcribes doctor-patient conversations in real-time</div>
+          <div class="jc-timeline">Shrinking: 2026</div>
+        </div>
+        <div class="job-card high">
+          <div class="jc-risk">50–65%</div>
+          <div class="jc-title">Junior Graphic Designer</div>
+          <div class="jc-sector">Creative</div>
+          <div class="jc-why">Midjourney, DALL-E, Canva AI generate designs from text</div>
+          <div class="jc-timeline">Shrinking: 2026</div>
+        </div>
+        <div class="job-card high">
+          <div class="jc-risk">50–65%</div>
+          <div class="jc-title">Paralegal / Legal Assistant</div>
+          <div class="jc-sector">Legal</div>
+          <div class="jc-why">AI reviews contracts, research cases, and files documents</div>
+          <div class="jc-timeline">Shrinking: 2026</div>
+        </div>
+        <div class="job-card high">
+          <div class="jc-risk">45–60%</div>
+          <div class="jc-title">Junior Software Developer</div>
+          <div class="jc-sector">Technology</div>
+          <div class="jc-why">Cursor + GitHub Copilot write 40–60% of routine code already</div>
+          <div class="jc-timeline">Pressure: 2026–27</div>
+        </div>
+        <div class="job-card high">
+          <div class="jc-risk">45–60%</div>
+          <div class="jc-title">Bank Teller / Loan Officer</div>
+          <div class="jc-sector">Banking</div>
+          <div class="jc-why">AI manages approvals, queries, fraud detection in seconds</div>
+          <div class="jc-timeline">Pressure: 2026–27</div>
+        </div>
+        <!-- Elevated -->
+        <div class="job-card elevated">
+          <div class="jc-risk">40–55%</div>
+          <div class="jc-title">HR Recruiter (Screening)</div>
+          <div class="jc-sector">Human Resources</div>
+          <div class="jc-why">AI screens 1000s of resumes and scores candidates instantly</div>
+          <div class="jc-timeline">Transforming: 2027</div>
+        </div>
+        <div class="job-card elevated">
+          <div class="jc-risk">40–55%</div>
+          <div class="jc-title">Entry-Level Financial Analyst</div>
+          <div class="jc-sector">Finance</div>
+          <div class="jc-why">Wall St. banks planning to cut ~200K roles over 3–5 years</div>
+          <div class="jc-timeline">Transforming: 2026–28</div>
+        </div>
+        <div class="job-card elevated">
+          <div class="jc-risk">38–52%</div>
+          <div class="jc-title">Radiologist (Diagnostics)</div>
+          <div class="jc-sector">Healthcare</div>
+          <div class="jc-why">AI reads X-rays/MRIs with higher accuracy than humans in trials</div>
+          <div class="jc-timeline">Augmented: 2027–29</div>
+        </div>
+        <div class="job-card elevated">
+          <div class="jc-risk">35–50%</div>
+          <div class="jc-title">Middle Manager</div>
+          <div class="jc-sector">All Sectors</div>
+          <div class="jc-why">20% of orgs using AI to flatten hierarchies by end of 2026</div>
+          <div class="jc-timeline">Shrinking: 2026–28</div>
+        </div>
+      </div>
+
+      <div class="safe-jobs">
+        <div class="sj-header">✅ Jobs AI Cannot Replace (Safest Roles)</div>
+        <div class="sj-grid">
+          <div class="sj-item">👩‍⚕️ Nurse / Caregiver<br/><span>Physical, emotional care</span></div>
+          <div class="sj-item">🧠 Psychologist / Therapist<br/><span>Human trust & empathy</span></div>
+          <div class="sj-item">🔧 Electrician / Plumber<br/><span>Physical trade work</span></div>
+          <div class="sj-item">👨‍🍳 Chef / Skilled Cook<br/><span>Taste, texture, creativity</span></div>
+          <div class="sj-item">🎓 Teacher (Senior)<br/><span>Mentoring & judgment</span></div>
+          <div class="sj-item">🏛️ Politician / Legislator<br/><span>0% replacement risk</span></div>
+          <div class="sj-item">👮 Police Officer<br/><span>Physical presence & judgment</span></div>
+          <div class="sj-item">🎭 Performing Artist<br/><span>Human expression & culture</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION: SECTORS ====== -->
+    <section id="sectors" class="section">
+      <div class="section-header">
+        <div class="sh-label">Section 04</div>
+        <h2 class="sh-title">Sectors Most Affected by AI</h2>
+        <p class="sh-sub">Industry-wide disruption analysis — which sectors face transformation, consolidation, and mass automation.</p>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="card">
+          <div class="card-head"><h3>Displacement Risk by Industry</h3><span class="src">FAIR Framework · What About AI</span></div>
+          <div class="chart-box tall"><canvas id="sectorChart"></canvas></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Sector Impact Timeline</h3><span class="src">McKinsey · WEF 2025</span></div>
+          <div class="sector-list">
+            <div class="sl-item sl-critical">
+              <div class="sl-left">
+                <div class="sl-name">📋 Office & Administrative</div>
+                <div class="sl-risk-bar"><div style="width:90%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">90.2%</div>
+                <div class="sl-time">2026 — NOW</div>
+              </div>
+            </div>
+            <div class="sl-item sl-critical">
+              <div class="sl-left">
+                <div class="sl-name">💰 Finance & Accounting</div>
+                <div class="sl-risk-bar"><div style="width:84%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">84.2%</div>
+                <div class="sl-time">2026 — NOW</div>
+              </div>
+            </div>
+            <div class="sl-item sl-critical">
+              <div class="sl-left">
+                <div class="sl-name">🛒 Retail & Customer Support</div>
+                <div class="sl-risk-bar"><div style="width:82%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">82.3%</div>
+                <div class="sl-time">2026 — NOW</div>
+              </div>
+            </div>
+            <div class="sl-item sl-high">
+              <div class="sl-left">
+                <div class="sl-name">📣 Marketing & PR</div>
+                <div class="sl-risk-bar"><div style="width:79%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">78.7%</div>
+                <div class="sl-time">2026–27</div>
+              </div>
+            </div>
+            <div class="sl-item sl-high">
+              <div class="sl-left">
+                <div class="sl-name">💻 Technology & IT Support</div>
+                <div class="sl-risk-bar"><div style="width:75%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">74.8%</div>
+                <div class="sl-time">2026–27</div>
+              </div>
+            </div>
+            <div class="sl-item sl-high">
+              <div class="sl-left">
+                <div class="sl-name">⚖️ Legal Services</div>
+                <div class="sl-risk-bar"><div style="width:74%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">73.8%</div>
+                <div class="sl-time">2026–28</div>
+              </div>
+            </div>
+            <div class="sl-item sl-elevated">
+              <div class="sl-left">
+                <div class="sl-name">🏭 Manufacturing</div>
+                <div class="sl-risk-bar"><div style="width:72%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">72.3%</div>
+                <div class="sl-time">2026–28</div>
+              </div>
+            </div>
+            <div class="sl-item sl-elevated">
+              <div class="sl-left">
+                <div class="sl-name">🚚 Transportation & Logistics</div>
+                <div class="sl-risk-bar"><div style="width:72%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">72.2%</div>
+                <div class="sl-time">2027–30</div>
+              </div>
+            </div>
+            <div class="sl-item sl-moderate">
+              <div class="sl-left">
+                <div class="sl-name">🎓 Education</div>
+                <div class="sl-risk-bar"><div style="width:56%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">56.2%</div>
+                <div class="sl-time">2027–29</div>
+              </div>
+            </div>
+            <div class="sl-item sl-moderate">
+              <div class="sl-left">
+                <div class="sl-name">⚕️ Healthcare</div>
+                <div class="sl-risk-bar"><div style="width:54%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">53.6%</div>
+                <div class="sl-time">2027–30</div>
+              </div>
+            </div>
+            <div class="sl-item sl-safe">
+              <div class="sl-left">
+                <div class="sl-name">💆 Personal Care Services</div>
+                <div class="sl-risk-bar"><div style="width:34%"></div></div>
+              </div>
+              <div class="sl-right">
+                <div class="sl-pct">34.4%</div>
+                <div class="sl-time">Safest sector</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION: COMPANIES ====== -->
+    <section id="companies" class="section">
+      <div class="section-header">
+        <div class="sh-label">Section 05</div>
+        <h2 class="sh-title">Companies Replacing Workers with AI</h2>
+        <p class="sh-sub">Named CEOs and direct CEO statements linking AI to layoffs — real data, verified sources.</p>
+      </div>
+
+      <div class="company-stats">
+        <div class="cs-item"><div class="cs-num">30%</div><div class="cs-label">of US companies plan AI layoffs in 2026</div></div>
+        <div class="cs-item"><div class="cs-num">20%</div><div class="cs-label">already replaced jobs with AI in 2025</div></div>
+        <div class="cs-item"><div class="cs-num">54%</div><div class="cs-label">automating customer support first</div></div>
+        <div class="cs-item"><div class="cs-num">47%</div><div class="cs-label">automating IT support second</div></div>
+      </div>
+
+      <div class="company-grid">
+        <div class="cg-card severity-critical">
+          <div class="cg-top">
+            <div class="cg-name">Oracle</div>
+            <div class="cg-cut">~30,000</div>
+          </div>
+          <div class="cg-sector">Enterprise Software</div>
+          <div class="cg-quote">"AI-driven restructuring across support and admin functions"</div>
+          <div class="cg-date">Apr 2026</div>
+        </div>
+        <div class="cg-card severity-critical">
+          <div class="cg-top">
+            <div class="cg-name">Amazon</div>
+            <div class="cg-cut">~30,000</div>
+          </div>
+          <div class="cg-sector">Tech / E-Commerce</div>
+          <div class="cg-quote">Andy Jassy: AI automation cited in warehouse and AWS ops reductions</div>
+          <div class="cg-date">Oct 2025 – Jan 2026</div>
+        </div>
+        <div class="cg-card severity-critical">
+          <div class="cg-top">
+            <div class="cg-name">Intel</div>
+            <div class="cg-cut">~24,000</div>
+          </div>
+          <div class="cg-sector">Semiconductors</div>
+          <div class="cg-quote">Manufacturing and testing roles replaced with AI inspection</div>
+          <div class="cg-date">Jul 2025</div>
+        </div>
+        <div class="cg-card severity-critical">
+          <div class="cg-top">
+            <div class="cg-name">UPS</div>
+            <div class="cg-cut">~48,000</div>
+          </div>
+          <div class="cg-sector">Logistics</div>
+          <div class="cg-quote">AI route optimization and warehouse robotics driving cuts</div>
+          <div class="cg-date">Nov 2025</div>
+        </div>
+        <div class="cg-card severity-high">
+          <div class="cg-top">
+            <div class="cg-name">Microsoft</div>
+            <div class="cg-cut">~15,000</div>
+          </div>
+          <div class="cg-sector">Technology</div>
+          <div class="cg-quote">Satya Nadella: Copilot AI replacing roles in support and admin</div>
+          <div class="cg-date">Jul 2025</div>
+        </div>
+        <div class="cg-card severity-high">
+          <div class="cg-top">
+            <div class="cg-name">Accenture</div>
+            <div class="cg-cut">~11,000</div>
+          </div>
+          <div class="cg-sector">IT Consulting</div>
+          <div class="cg-quote">Julie Sweet: "AI is fundamentally reshaping our workforce needs"</div>
+          <div class="cg-date">Sep 2025</div>
+        </div>
+        <div class="cg-card severity-high">
+          <div class="cg-top">
+            <div class="cg-name">Citigroup</div>
+            <div class="cg-cut">~20,000</div>
+          </div>
+          <div class="cg-sector">Financial Services</div>
+          <div class="cg-quote">AI trading and compliance automation driving headcount reduction</div>
+          <div class="cg-date">Planned 2026</div>
+        </div>
+        <div class="cg-card severity-high">
+          <div class="cg-top">
+            <div class="cg-name">TCS</div>
+            <div class="cg-cut">~12,000</div>
+          </div>
+          <div class="cg-sector">IT Services (India)</div>
+          <div class="cg-quote">AI tools replacing L1/L2 support and testing teams</div>
+          <div class="cg-date">Jul 2025</div>
+        </div>
+        <div class="cg-card severity-mid">
+          <div class="cg-top">
+            <div class="cg-name">Block (Square)</div>
+            <div class="cg-cut">~4,000</div>
+          </div>
+          <div class="cg-sector">Fintech</div>
+          <div class="cg-quote">Jack Dorsey: Direct AI link, 14% workforce reduction</div>
+          <div class="cg-date">Feb 2026</div>
+        </div>
+        <div class="cg-card severity-mid">
+          <div class="cg-top">
+            <div class="cg-name">Salesforce</div>
+            <div class="cg-cut">~5,000</div>
+          </div>
+          <div class="cg-sector">Enterprise Software</div>
+          <div class="cg-quote">Marc Benioff: AI agents replacing entire support teams</div>
+          <div class="cg-date">Aug 2025</div>
+        </div>
+        <div class="cg-card severity-mid">
+          <div class="cg-top">
+            <div class="cg-name">Klarna</div>
+            <div class="cg-cut">~700</div>
+          </div>
+          <div class="cg-sector">Fintech / Payments</div>
+          <div class="cg-quote">CEO: AI assistant does work of 700 customer service agents</div>
+          <div class="cg-date">May 2025</div>
+        </div>
+        <div class="cg-card severity-low">
+          <div class="cg-top">
+            <div class="cg-name">Baker McKenzie</div>
+            <div class="cg-cut">600–1,000</div>
+          </div>
+          <div class="cg-sector">Law / Legal</div>
+          <div class="cg-quote">AI contract review replacing paralegal and associate roles</div>
+          <div class="cg-date">Feb 2026</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION: COUNTRIES ====== -->
+    <section id="countries" class="section">
+      <div class="section-header">
+        <div class="sh-label">Section 06</div>
+        <h2 class="sh-title">Countries Leading AI Adoption & Job Replacement</h2>
+        <p class="sh-sub">Who's deploying AI fastest — and what it means for workers in each region.</p>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="card">
+          <div class="card-head"><h3>AI Adoption Rate by Country</h3><span class="src">Microsoft AI Economy Report · Cybernews 2026</span></div>
+          <div class="chart-box"><canvas id="countryChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Jobs at Risk by Country</h3><span class="src">Oxford · OECD 2026</span></div>
+          <div class="chart-box"><canvas id="riskChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="country-cards">
+        <div class="country-card cc-uae">
+          <div class="cc-flag">🇦🇪</div>
+          <div class="cc-name">UAE</div>
+          <div class="cc-stat">64% AI adoption</div>
+          <div class="cc-rank">#1 World</div>
+          <div class="cc-detail">World's highest per-capita AI usage. Government mandates AI in all ministries. Abu Dhabi's G42 is a global AI powerhouse. AI is replacing customer service, admin, and financial roles across banking and telecom sectors.</div>
+        </div>
+        <div class="country-card cc-sg">
+          <div class="cc-flag">🇸🇬</div>
+          <div class="cc-name">Singapore</div>
+          <div class="cc-stat">61% AI adoption</div>
+          <div class="cc-rank">#2 World</div>
+          <div class="cc-detail">Smart Nation initiative. $7.3B invested in AI. 39% jobs at risk. Finance, logistics, and government services heavily automated. Strong retraining programs protect workers through SkillsFuture.</div>
+        </div>
+        <div class="country-card cc-kr">
+          <div class="cc-flag">🇰🇷</div>
+          <div class="cc-name">South Korea</div>
+          <div class="cc-stat">1,012 robots/10K workers</div>
+          <div class="cc-rank">Highest Robot Density</div>
+          <div class="cc-detail">World's most automated manufacturing. Samsung, Hyundai deploying AI robotics at scale. 70% jobs at risk. National AI curriculum introduced to prep workers for hybrid economy.</div>
+        </div>
+        <div class="country-card cc-jp">
+          <div class="cc-flag">🇯🇵</div>
+          <div class="cc-name">Japan</div>
+          <div class="cc-stat">400+ robots/10K workers</div>
+          <div class="cc-rank">Aging Workforce Driver</div>
+          <div class="cc-detail">Automation driven by labor shortage, not cost-cutting. 68% jobs at risk. Elder care robots, factory AI standard. Government offers tax incentives for robotics adoption across all industries.</div>
+        </div>
+        <div class="country-card cc-us">
+          <div class="cc-flag">🇺🇸</div>
+          <div class="cc-name">United States</div>
+          <div class="cc-stat">59% jobs at risk</div>
+          <div class="cc-rank">AI Innovation Leader</div>
+          <div class="cc-detail">World's largest AI companies (OpenAI, Google, Microsoft, Anthropic). Despite leading AI creation, US ranks 24th in workforce adoption. 55,000 jobs directly lost in 2025. White-collar roles hit hardest.</div>
+        </div>
+        <div class="country-card cc-cn">
+          <div class="cc-flag">🇨🇳</div>
+          <div class="cc-name">China</div>
+          <div class="cc-stat">290,000 robots installed (2023)</div>
+          <div class="cc-rank">Volume Leader</div>
+          <div class="cc-detail">Largest manufacturer of industrial robots. Made in China 2025 strategy. 47% jobs exposed. DeepSeek challenging US AI dominance. Factories deploying AI at unprecedented speed.</div>
+        </div>
+        <div class="country-card cc-uk">
+          <div class="cc-flag">🇬🇧</div>
+          <div class="cc-name">United Kingdom</div>
+          <div class="cc-stat">67% jobs at risk</div>
+          <div class="cc-rank">High Exposure</div>
+          <div class="cc-detail">Finance, legal, and creative sectors highly exposed. Baker McKenzie cutting 1,000 legal roles in 2026. 3.9M AI-related jobs projected by 2035. Government AI Action Plan rolled out.</div>
+        </div>
+        <div class="country-card cc-my">
+          <div class="cc-flag">🇲🇾</div>
+          <div class="cc-name">Malaysia</div>
+          <div class="cc-stat">38% believe AI improves work</div>
+          <div class="cc-rank">Emerging Adopter</div>
+          <div class="cc-detail">80%+ of routine tasks in Global Capability Centres to be automated. Manufacturing and shared services sectors most exposed. Government's MyDigital initiative targeting AI adoption. Growing fintech automation.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION: PREDICTIONS ====== -->
+    <section id="predictions" class="section">
+      <div class="section-header">
+        <div class="sh-label">Section 07</div>
+        <h2 class="sh-title">AI Predictions 2026–2030</h2>
+        <p class="sh-sub">What the world's top institutions — WEF, Goldman Sachs, McKinsey, MIT, PwC — say will happen next.</p>
+      </div>
+
+      <div class="two-col-grid mb-20">
+        <div class="card">
+          <div class="card-head"><h3>Jobs Displaced vs Created by 2030</h3><span class="src">WEF Future of Jobs 2025</span></div>
+          <div class="chart-box"><canvas id="jobsChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>GDP Impact of AI ($T)</h3><span class="src">Goldman Sachs · McKinsey · IDC</span></div>
+          <div class="chart-box"><canvas id="gdpChart"></canvas></div>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-year">2026</div>
+          <div class="tl-content">
+            <h4>The Junior Crisis</h4>
+            <p>Entry-level compression accelerates. 37% of large firms run agentic AI pilots. Customer service, data entry, and basic content roles see significant reductions. 50% of white-collar entry-level positions at risk (Anthropic CEO Dario Amodei).</p>
+            <div class="tl-tags"><span>Entry-Level</span><span>Agentic AI</span><span>White Collar</span></div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2027</div>
+          <div class="tl-content">
+            <h4>Middle Management Hollowing</h4>
+            <p>20% of organizations flatten hierarchies using AI to eliminate 50%+ of middle management roles. AI agents handle performance tracking, reporting, and team coordination autonomously.</p>
+            <div class="tl-tags"><span>Management</span><span>AI Agents</span><span>Org Redesign</span></div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2028</div>
+          <div class="tl-content">
+            <h4>Physical + Digital Convergence</h4>
+            <p>Autonomous vehicles reach commercial scale — 1.5M US trucking jobs at risk. AI surgeons and medical assistants deployed at scale. Robotic warehouses become standard at Amazon, Alibaba, DHL.</p>
+            <div class="tl-tags"><span>Autonomous Vehicles</span><span>Robotics</span><span>Healthcare AI</span></div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2030</div>
+          <div class="tl-content">
+            <h4>New Equilibrium — Net +78M Jobs</h4>
+            <p>WEF: 170M new jobs created vs 92M displaced. McKinsey: 30% of US work hours automated. Goldman Sachs: $7T GDP boost. 60% of workers in jobs that didn't exist in 2024. The workers who retrained win big.</p>
+            <div class="tl-tags"><span>Net Job Growth</span><span>New Roles</span><span>$7T GDP Boost</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="institution-quotes">
+        <div class="iq-card">
+          <div class="iq-logo">Goldman Sachs</div>
+          <div class="iq-quote">"Generative AI could replace the equivalent of <strong>300 million full-time jobs</strong> globally, but also raise global GDP by 7% — roughly $7 trillion."</div>
+        </div>
+        <div class="iq-card">
+          <div class="iq-logo">World Economic Forum</div>
+          <div class="iq-quote">"By 2030, <strong>92M jobs displaced, 170M created</strong> — net gain of 78M. But 59% of workers will need new skills to survive."</div>
+        </div>
+        <div class="iq-card">
+          <div class="iq-logo">McKinsey</div>
+          <div class="iq-quote">"Up to <strong>30% of US work hours automated by 2030</strong>. Women are 1.5x more likely than men to need to change occupations."</div>
+        </div>
+        <div class="iq-card">
+          <div class="iq-logo">Anthropic CEO</div>
+          <div class="iq-quote">"AI could eliminate <strong>50% of entry-level white-collar positions</strong> within 5 years — potentially pushing US unemployment to 10–20%."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SECTION: SKILLS / SURVIVE & THRIVE ====== -->
+    <section id="skills" class="section">
+      <div class="section-header">
+        <div class="sh-label">Section 08</div>
+        <h2 class="sh-title">Survive &amp; Thrive — Build Your AI-Era Skills</h2>
+        <p class="sh-sub">A 56% wage premium exists for workers who effectively use AI. Here's exactly how to become one of them.</p>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="card">
+          <div class="card-head"><h3>Skills Radar — Human vs AI</h3><span class="src">WEF · LinkedIn</span></div>
+          <div class="chart-box"><canvas id="radarChart"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>AI Job Salary Ranges 2026</h3><span class="src">Veritone · LinkedIn Salary</span></div>
+          <div class="salary-bars">
+            <div class="sb-item">
+              <div class="sb-left"><span class="sb-role">AI / ML Engineer</span><span class="sb-range">$140K–$200K+</span></div>
+              <div class="sb-bar"><div style="width:95%"></div></div>
+            </div>
+            <div class="sb-item">
+              <div class="sb-left"><span class="sb-role">AI Product Manager</span><span class="sb-range">$130K–$185K</span></div>
+              <div class="sb-bar"><div style="width:88%"></div></div>
+            </div>
+            <div class="sb-item">
+              <div class="sb-left"><span class="sb-role">Data Scientist</span><span class="sb-range">$120K–$175K</span></div>
+              <div class="sb-bar"><div style="width:84%"></div></div>
+            </div>
+            <div class="sb-item">
+              <div class="sb-left"><span class="sb-role">AI Ethics Officer</span><span class="sb-range">$100K–$160K</span></div>
+              <div class="sb-bar"><div style="width:76%"></div></div>
+            </div>
+            <div class="sb-item">
+              <div class="sb-left"><span class="sb-role">Prompt Engineer</span><span class="sb-range">$90K–$150K</span></div>
+              <div class="sb-bar"><div style="width:71%"></div></div>
+            </div>
+            <div class="sb-item">
+              <div class="sb-left"><span class="sb-role">AI Trainer / RLHF</span><span class="sb-range">$75K–$120K</span></div>
+              <div class="sb-bar"><div style="width:57%"></div></div>
+            </div>
+            <div class="sb-item highlight">
+              <div class="sb-left"><span class="sb-role">Median AI Role</span><span class="sb-range">$156,998</span></div>
+              <div class="sb-bar"><div style="width:74%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 Skills -->
+      <div class="skills-section">
+        <h3 class="skills-title">8 Skills That Make You Irreplaceable</h3>
+        <div class="skills-grid">
+          <div class="skill-block sb-essential">
+            <div class="sk-num">01</div>
+            <div class="sk-badge">Essential</div>
+            <div class="sk-name">Critical Thinking & Problem Framing</div>
+            <div class="sk-why">AI predicts. Humans think. Defining the RIGHT problem is the #1 skill WEF ranks through 2030.</div>
+            <div class="sk-how"><strong>How:</strong> Case studies, design thinking, Socratic debates, reading across disciplines</div>
+          </div>
+          <div class="skill-block sb-essential">
+            <div class="sk-num">02</div>
+            <div class="sk-badge">Essential</div>
+            <div class="sk-name">AI Literacy & Prompt Engineering</div>
+            <div class="sk-why">LinkedIn's #1 fastest-growing skill in 2025. Directing AI to produce useful outputs is a career superpower.</div>
+            <div class="sk-how"><strong>How:</strong> Use ChatGPT/Claude daily · Coursera Prompt Engineering course (free) · Build 5 automations</div>
+          </div>
+          <div class="skill-block sb-high">
+            <div class="sk-num">03</div>
+            <div class="sk-badge">High Value</div>
+            <div class="sk-name">Workflow Automation & Orchestration</div>
+            <div class="sk-why">Building multi-step AI pipelines that connect tools = massive time savings = massive value creation.</div>
+            <div class="sk-how"><strong>How:</strong> Learn Zapier, Make.com, n8n · Build one simple automation per week</div>
+          </div>
+          <div class="skill-block sb-essential">
+            <div class="sk-num">04</div>
+            <div class="sk-badge">Essential</div>
+            <div class="sk-name">Emotional Intelligence & Leadership</div>
+            <div class="sk-why">AI has no empathy. Trust, conflict resolution, and inspiring people are irreplaceable human superpowers.</div>
+            <div class="sk-how"><strong>How:</strong> Mentoring, Toastmasters, EQ assessments, actively seek leadership opportunities</div>
+          </div>
+          <div class="skill-block sb-high">
+            <div class="sk-num">05</div>
+            <div class="sk-badge">High Value</div>
+            <div class="sk-name">AI Output Verification & Fact-Checking</div>
+            <div class="sk-why">AI hallucinates. The person who can validate, quality-check, and audit AI output is extremely valuable.</div>
+            <div class="sk-how"><strong>How:</strong> Practice cross-referencing AI vs primary sources · Learn basic data validation</div>
+          </div>
+          <div class="skill-block sb-high">
+            <div class="sk-num">06</div>
+            <div class="sk-badge">High Value</div>
+            <div class="sk-name">Domain Expertise + AI Hybrid Skills</div>
+            <div class="sk-why">Deep knowledge in YOUR field PLUS AI tools = career rocket fuel. AI amplifies experts, replaces generalists.</div>
+            <div class="sk-how"><strong>How:</strong> Become the AI expert in your specific field (telecom, CS, finance, etc.)</div>
+          </div>
+          <div class="skill-block sb-high">
+            <div class="sk-num">07</div>
+            <div class="sk-badge">High Value</div>
+            <div class="sk-name">Creative Synthesis & Storytelling</div>
+            <div class="sk-why">Combining ideas, creating narratives, pitching vision — AI generates, humans curate and give meaning.</div>
+            <div class="sk-how"><strong>How:</strong> Write weekly, do creative side projects, study great storytellers and communicators</div>
+          </div>
+          <div class="skill-block sb-essential">
+            <div class="sk-num">08</div>
+            <div class="sk-badge">Essential</div>
+            <div class="sk-name">Continuous Learning Mindset</div>
+            <div class="sk-why">Skill half-life shrunk to 2 years. The only career insurance is the habit of constant re-skilling.</div>
+            <div class="sk-how"><strong>How:</strong> Set monthly learning goals · Coursera, LinkedIn Learning, YouTube · Build in public</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 90-Day Plan -->
+      <div class="action-plan-card">
+        <div class="apc-header">
+          <div class="apc-icon">🚀</div>
+          <div>
+            <h3>Your 90-Day AI Survival & Growth Plan</h3>
+            <p>Start today. Do this sequentially. It works.</p>
+          </div>
+        </div>
+        <div class="apc-months">
+          <div class="apc-month">
+            <div class="apcm-header">Month 1 — Foundation</div>
+            <div class="apcm-list">
+              <div class="apcm-item">→ Pick one AI tool and use it EVERY day (ChatGPT recommended)</div>
+              <div class="apcm-item">→ Complete Google AI Essentials (free, 6 hours)</div>
+              <div class="apcm-item">→ Identify 3 repetitive tasks in your job — try automating one</div>
+              <div class="apcm-item">→ Follow 5 AI experts on LinkedIn or X</div>
+            </div>
+          </div>
+          <div class="apc-month">
+            <div class="apcm-header">Month 2 — Build</div>
+            <div class="apcm-list">
+              <div class="apcm-item">→ Build one automation with Zapier or Make.com</div>
+              <div class="apcm-item">→ Start documenting your AI work — create a portfolio</div>
+              <div class="apcm-item">→ Take a domain-specific AI course (CS AI, Finance AI, etc.)</div>
+              <div class="apcm-item">→ Fact-check 3 AI outputs per week — build verification habit</div>
+            </div>
+          </div>
+          <div class="apc-month">
+            <div class="apcm-header">Month 3 — Lead</div>
+            <div class="apcm-list">
+              <div class="apcm-item">→ Propose an AI project to your manager or team</div>
+              <div class="apcm-item">→ Get certified: IBM AI Developer or Microsoft AI Fundamentals</div>
+              <div class="apcm-item">→ Launch a side project or income using AI tools</div>
+              <div class="apcm-item">→ Join a leadership or communication program</div>
+            </div>
+          </div>
+        </div>
+        <div class="apc-stat">
+          <span>💡 PWC:</span> Workers using AI effectively earn a <strong>56% wage premium</strong> &nbsp;|&nbsp;
+          <span>🔬 Cornell:</span> Humans + AI agents = <strong>73% productivity boost</strong> &nbsp;|&nbsp;
+          <span>📊 LinkedIn:</span> AI skills listing = <strong>2x interview rate</strong>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="fl">
+        <div class="f-brand">AI Intelligence Hub 2026</div>
+        <div class="f-note">For informational purposes. Data current as of April 16, 2026.</div>
+      </div>
+      <div class="f-sources">
+        <a href="https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf" target="_blank">WEF Future of Jobs 2025</a> ·
+        <a href="https://www.mckinsey.com/mgi/our-research/generative-ai-and-the-future-of-work-in-america" target="_blank">McKinsey GenAI Report</a> ·
+        <a href="https://gs.statcounter.com/ai-chatbot-market-share" target="_blank">StatCounter</a> ·
+        <a href="https://bayelsawatch.com/ai-replacing-jobs-statistics/" target="_blank">AI Job Stats 2026</a> ·
+        <a href="https://almcorp.com/blog/ai-job-displacement-statistics/" target="_blank">ALM Corp Displacement</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
