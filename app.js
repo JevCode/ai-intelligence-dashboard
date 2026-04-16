@@ -3,11 +3,31 @@
 // Mobile nav, counters, charts, scroll spy
 // =========================================
 
+let chartsInitialized = false;
+
+function safeInitCharts() {
+  if (chartsInitialized) return;
+  chartsInitialized = true;
+  initCharts();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
-  initCounters();
-  initCharts();
   initScrollSpy();
+  setTimeout(initCounters, 120);
+  // Double rAF ensures layout is fully painted before Chart.js measures canvas
+  requestAnimationFrame(() => requestAnimationFrame(safeInitCharts));
+});
+
+// Fallback: if charts haven't rendered by window load, force them
+window.addEventListener('load', () => {
+  setTimeout(safeInitCharts, 200);
+  // Also re-run counters in case they were missed
+  document.querySelectorAll('[data-count]').forEach(el => {
+    if (el.textContent === '0' || el.textContent.startsWith('0')) {
+      animateCount(el);
+    }
+  });
 });
 
 // ====== MOBILE NAV ======
@@ -34,21 +54,42 @@ document.querySelectorAll('.nav-item').forEach(link => {
 // ====== COUNTERS ======
 function initCounters() {
   const els = document.querySelectorAll('[data-count]');
+  // Always fire immediately for elements already in viewport,
+  // and also watch for elements that scroll into view later.
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); obs.unobserve(e.target); }});
-  }, { threshold: 0.5 });
-  els.forEach(el => obs.observe(el));
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(e.target);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px' });
+
+  els.forEach(el => {
+    // Set initial display value so it's never blank
+    el.textContent = '0' + (el.dataset.suffix || '');
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      // Already visible — animate immediately
+      animateCount(el);
+    } else {
+      obs.observe(el);
+    }
+  });
 }
 function animateCount(el) {
   const target = +el.dataset.count;
   const suffix = el.dataset.suffix || '';
-  const dur = 1600, steps = 50;
+  const dur = 1800, steps = 60;
   let step = 0;
   const timer = setInterval(() => {
     step++;
-    const val = Math.min(Math.round(target * (step / steps)), target);
+    const progress = step / steps;
+    // Ease-out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const val = Math.min(Math.round(target * eased), target);
     el.textContent = val + suffix;
-    if (step >= steps) clearInterval(timer);
+    if (step >= steps) { el.textContent = target + suffix; clearInterval(timer); }
   }, dur / steps);
 }
 
@@ -72,6 +113,8 @@ function initScrollSpy() {
 Chart.defaults.color = '#8899bb';
 Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
 Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+Chart.defaults.responsive = true;
+Chart.defaults.maintainAspectRatio = false;
 
 const tooltipDefaults = {
   backgroundColor: '#1a2540',
